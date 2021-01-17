@@ -4,14 +4,11 @@ package com.github.sikandar.faktory;
  * Faktory JobType
  * @author Sikandar Ali Awan
  */
-public class JobType {
-    String name;
+public interface JobType {
 
-    private JobType(String name) {
-        this.name = name;
-    }
+    String getName();
 
-    public static JobType of(String name) {
-        return new JobType(name);
+    static JobType of(String name) {
+        return new BaseJobType(name);
     }
 }

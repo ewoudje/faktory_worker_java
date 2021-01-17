@@ -4,14 +4,10 @@ package com.github.sikandar.faktory;
  * Faktory Job Queue
  * @author Sikandar Ali Awan
  */
-public class JobQueue {
-    String name;
+public interface JobQueue {
+    String getName();
 
-    private JobQueue(String name) {
-        this.name = name;
-    }
-
-    public static JobQueue of(String name) {
-        return new JobQueue(name);
+    static JobQueue of(String name) {
+        return new BaseJobQueue(name);
     }
 }

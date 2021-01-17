@@ -31,9 +31,9 @@ public class FaktoryJob {
         this(jobType, queue, new Object[]{payload});
     }
 
-    public FaktoryJob(JobType jobType, JobQueue queue, Object[] args) {
-        this.jobType = jobType == null ? "default" : jobType.name;
-        this.queue = queue == null ? "default" : queue.name;
+    public FaktoryJob(JobType jobType, JobQueue queue, Object... args) {
+        this.jobType = jobType.getName();
+        this.queue = queue == null ? "default" : queue.getName();
         this.args = args;
     }
 
